@@ -1,0 +1,31 @@
+
+<mat-card>
+  <mat-card-title>Tela de Cadastro</mat-card-title>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="userForm">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email" name="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="password" name="password" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="button">
+        <button color="primary" mat-raised-button style="background-color: black; color: white;" (click)="createUser()">Cadastrar</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
